@@ -7,6 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<p id="demo">这是我的第一个js测试</p>
+<button onclick="myFunction()">点击这里</button>
+<script>
+function myFunction()
+{
+	var carname="Volvo";
+	document.getElementById("demo").innerHTML=carname;
+	}
+</script>
 </body>
 </html>
