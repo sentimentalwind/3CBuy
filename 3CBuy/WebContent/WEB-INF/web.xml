@@ -14,8 +14,16 @@
     <servlet-name>demo</servlet-name>
     <servlet-class>servlet.demo</servlet-class>
   </servlet>
+   <servlet>
+    <servlet-name>DoLogin</servlet-name>
+    <servlet-class>servlet.DoLogin</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>demo</servlet-name>
     <url-pattern>/demo</url-pattern>
+  </servlet-mapping> 
+  <servlet-mapping>
+    <servlet-name>DoLogin</servlet-name>
+    <url-pattern>/DoLogin</url-pattern>
   </servlet-mapping>
 </web-app>
