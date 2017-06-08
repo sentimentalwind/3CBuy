@@ -53,39 +53,38 @@
 	  document.getElementById("x").style.fontSize=20;
   </script>
    <form action="<%=request.getContextPath()%>/demo"onsubmit="return CheckAll(this);" method="POST">
-   <table border="0" width="800" cellspacing="5" cellpadding="5">
+   <table border="0" width="400" cellspacing="2" cellpadding="3">
                 <tr>
-			    	<td class="label"  id="01">用户名：</td>
-			    	<td class="controler"><input type="text" name="name"  id=name/></td>
+			    	<td type="label"  id="01">用户名：</td>
+			    	<td type="controler"><input type="text" name="name"  id=name/></td>
+			    </tr>
+			    
+			    <tr>
+			    	<td type="label">密码：</td>
+			    	<td type="controler"><input type="password" name="password"  id=password></td>
+			    	
+			    </tr>
+			    <tr>
+			    	<td type="label">确认密码：</td>
+			    	<td type="controler"><input type="password" name="confirpass" id=confirpass ></td>
+			    	
+			    </tr>
+			    <tr>
+			    	<td type="label">电子邮箱：</td>
+			    	<td type="controler"><input type="text" name="email" id=email></td>
 			    	
 			    </tr>
 			    
 			    <tr>
-			    	<td class="label">密码：</td>
-			    	<td class="controler"><input type="password" name="password"  id=password></td>
-			    	
-			    </tr>
-			    <tr>
-			    	<td class="label">确认密码：</td>
-			    	<td class="controler"><input type="password" name="confirpass" id=confirpass ></td>
-			    	
-			    </tr>
-			    <tr>
-			    	<td class="label">电子邮箱：</td>
-			    	<td class="controler"><input type="text" name="email" id=email></td>
-			    	
-			    </tr>
-			    
-			    <tr>
-                    <td class="label">手机号：</td>
-                    <td class="controler"><input type="text" name="number" id=number></td>
+                    <td type="label">手机号：</td>
+                    <td type="controler"><input type="text" name="number" id=number></td>
                </tr>
      
       
                 <tr>
 			    	<td colspan="2" align="center">
 			    		<input type="submit" value="注册" />&nbsp;&nbsp;
-			    	    <input type="reset" value="取消"/>&nbsp;&nbsp;
+			    	    <input type="reset" value="取消" onclick=window.location.href("Login.jsp")>&nbsp;&nbsp;
 			    	</td>
 			    </tr>
 

@@ -6,6 +6,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import DAO.UserDao;
 import entity.UserInfo;
 
 /**
@@ -44,8 +46,6 @@ public class demo extends HttpServlet {
 		String email;
 		String number;
 		
-		
-		
 		try
 		{
 			
@@ -58,8 +58,10 @@ public class demo extends HttpServlet {
 			u.setPassword(password);
 			u.setEmail(email);
 			u.setNumber(number);
-			request.getSession().setAttribute("regUsers", u);//把用户信息保存在session中，取个名字叫regUsers
-			request.getRequestDispatcher("jsp/RegSuccess.jsp").forward(request, response);//请求转发提交给注册成功返回给用户
+
+		    UserDao userdao=new UserDao();
+		    userdao.saveUserInfo(name, password, email, number);//将用户信息导入数据库
+		    response.sendRedirect("jsp/RegSuccess.jsp");//请求转发提交给注册成功返回给用户
 			
 		}
 		catch(Exception ex)

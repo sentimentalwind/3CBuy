@@ -13,5 +13,6 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="D:/360极速浏览器下载/java_ee_sdk-7u3-web.zip"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

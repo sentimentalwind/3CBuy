@@ -1,11 +1,15 @@
 package servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import DAO.ConfirmDao;
 import entity.LoginUserInfo;
 
 /**
@@ -18,7 +22,7 @@ public class DoLogin extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public DoLogin() {
+    public DoLogin() { 
         super();
         // TODO Auto-generated constructor stub
     }
@@ -40,14 +44,23 @@ public class DoLogin extends HttpServlet {
 	    String username;
 	    String password;
 	    LoginUserInfo u=new LoginUserInfo();
+	    ConfirmDao confirmdao=new ConfirmDao();
 	    try
 	    {
 	    	username=request.getParameter("name");
 	    	password=request.getParameter("password");
 	    	u.setUsername(username);
 	    	u.setPassword(password);
-	    	//request.getSession().setAttribute("loginS", u);//把用户信息保存在session中，取个名字叫loginS
-			request.getRequestDispatcher("jsp/MainPage.jsp").forward(request, response);//请求转发提交给登录成功返回给用户
+	    	System.out.println(password);
+	    	String x=confirmdao.ConfirmUserInfo(u);
+	    	if(password.equals(x))//数据库和用户输入进行匹配
+	    	{
+	    		response.sendRedirect("jsp/MainPage.jsp");//请求转发提交给登录成功返回给用户
+	    	}
+	    	else
+	    	{
+	    		response.sendRedirect("jsp/LoginFail.jsp");
+	    	}
 	    	
 	    }
 	    catch(Exception ex)

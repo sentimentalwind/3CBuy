@@ -10,8 +10,6 @@ public class UserInfo {
    public UserInfo()
    {}
    
-   
-   
 public String getName() {
 	return name;
 }
